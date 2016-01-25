@@ -96,7 +96,7 @@ function deletePermissionIfExists(callback) {
     client.queryPermissions(cachedUser._self, 'SELECT * FROM root r WHERE r.id="' + permissionId + '"').toArray(function (err, results) {
         if (err) {
             console.log('failed to create permission');
-            console.log(error);
+            console.log(err);
             throw (err);
         }
         if (!err && results.length === 1) {
